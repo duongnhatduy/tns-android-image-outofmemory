@@ -1,0 +1,17 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" xmlns:customControls="swipe">
+  <StackLayout>
+    <ListView
+      items="{{ postList }}"
+      isScrolling="{{ isScrolling }}"
+      loadMoreItems="listViewLoadMoreItems"
+      >
+      <ListView.itemTemplate>
+        <StackLayout orientation="vertical">
+          <Image  imageSource="{{ thumbnailImage }}" cssClass="post-image" stretch="aspectFill" tap="imageTapHandler"/>
+          <Label text="{{ title || 'Untitled' }}" textWrap="true" cssClass="title"/>
+          <Label text="{{ body }}" cssClass="author" />
+        </StackLayout>
+      </ListView.itemTemplate>
+    </ListView>
+  </StackLayout> 
+</Page>
